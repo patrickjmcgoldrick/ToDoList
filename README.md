@@ -1,5 +1,7 @@
 # ToDo:
 * animated checkbox on PendingView
+* Red Dates for past due tasks
+  * Core Data implementation
 
 # Weekend 1 Assignment
 ## Create a basic TODO app - 
