@@ -156,11 +156,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYY-kc-M8a">
-                                <rect key="frame" x="169" y="447" width="37" height="60"/>
+                                <rect key="frame" x="170.5" y="447" width="34" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="SeN-u6-BbS"/>
                                 </constraints>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="btnActionDone:" destination="WeZ-Vj-tYo" eventType="touchUpInside" id="aNW-YE-wRx"/>
                                 </connections>
@@ -201,7 +201,7 @@
                         <viewLayoutGuide key="safeArea" id="DCS-hs-MpV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="62w-IE-v2q">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="gwf-aj-iQ9">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="gwf-aj-iQ9">
                             <connections>
                                 <action selector="btnActionDone:" destination="WeZ-Vj-tYo" id="ll9-4K-RV8"/>
                             </connections>
