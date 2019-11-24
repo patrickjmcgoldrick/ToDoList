@@ -86,12 +86,9 @@ class AddTaskViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let dataController = appDelegate.dataController
         
-        let task = ToDoTask(createdDate: Date(),
-                            dueDate: Date(),
+        let task = ToDoTask(dueDate: Date(),
                             title: tfTitle.text!,
-                            desc: tfDescription.text,
-                            completed: false,
-                            completedDate: nil)
+                            desc: tfDescription.text)
         
         print ("Saving Task.")
         

@@ -9,7 +9,7 @@
 import Foundation
 
 class ArchiverDataController : DataControllerPC {
-    
+
     private static let ARCHIVE_FILENAME : String = "tasks_archive"
     
     func addTask(task: ToDoTask) {
@@ -18,19 +18,48 @@ class ArchiverDataController : DataControllerPC {
         tasks.append(task)
         
         if saveObject(fileName: ArchiverDataController.ARCHIVE_FILENAME, object: tasks) {
-            print ("Save worked...")
         } else {
-            print ("Save failed>")
+            // TODO: need to throw or pass back info
+            print ("add Task failed.")
         }
         
     }
     
+    func remove(index: Int, pending: [ToDoTask]) -> [ToDoTask] {
+        
+        var result = pending
+        result.remove(at: index)
+        let completedTasks = getCompletedTasks()
+        result += completedTasks
+
+        saveObject(fileName: ArchiverDataController.ARCHIVE_FILENAME, object: result)
+        
+        return getPendingTasks()
+    }
+    
+    func markCompleted(index: Int, pending: [ToDoTask]) -> [ToDoTask] {
+        
+        pending[index].completed = true
+        pending[index].completedDate = Date()
+        
+        let completedTasks = getCompletedTasks()
+        let result = pending + completedTasks
+        
+        saveObject(fileName: ArchiverDataController.ARCHIVE_FILENAME, object: result)
+
+        return getPendingTasks()
+    }
+    
     func getCompletedTasks() -> [ToDoTask] {
-        return getAllTasks()
+        let allTasks = getAllTasks()
+        let completedTasks = allTasks.filter{ $0.completed }
+        return completedTasks
     }
     
     func getPendingTasks() -> [ToDoTask] {
-        return getAllTasks()
+        let allTasks = getAllTasks()
+        let pendingTasks = allTasks.filter{ $0.completed == false }
+        return pendingTasks
     }
     
     private func getAllTasks() -> [ToDoTask] {
@@ -50,14 +79,11 @@ class ArchiverDataController : DataControllerPC {
         
         let filePath = self.getDirectoryPath().appendingPathComponent(fileName)
         
-        print ("File Path: \(filePath)")
         do {
             let data = try NSKeyedArchiver.archivedData(withRootObject: object, requiringSecureCoding: false)
-            print ("Created Data Object.")
             
             try data.write(to: filePath)
             
-            print ("Wrote file to disk")
             return true
         } catch {
             print("error is: \(error.localizedDescription)")//4
@@ -68,13 +94,13 @@ class ArchiverDataController : DataControllerPC {
     // Get object from document directory
     private func getObject(fileName: String) -> Any? {
         
-        let filePath = self.getDirectoryPath().appendingPathComponent(fileName)//5
+        let filePath = self.getDirectoryPath().appendingPathComponent(fileName)
         do {
-            let data = try Data(contentsOf: filePath)//6
-            let object = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data)//7
-            return object//8
+            let data = try Data(contentsOf: filePath)
+            let object = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data)
+            return object
         } catch {
-            print("error is: \(error.localizedDescription)")//9
+            print("error is: \(error.localizedDescription)")
         }
         return nil
     }

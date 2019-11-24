@@ -13,6 +13,12 @@ public protocol DataControllerPC {
     // write task
     func addTask(task: ToDoTask)
     
+    // remove a record based on index
+    func remove(index: Int, pending: [ToDoTask]) -> [ToDoTask]
+    
+    // mark a row completed
+    func markCompleted(index: Int, pending: [ToDoTask]) -> [ToDoTask]
+    
     // read pending tasks
     func getPendingTasks() -> [ToDoTask]
     

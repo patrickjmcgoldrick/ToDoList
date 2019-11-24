@@ -9,7 +9,16 @@
 import Foundation
 
 public class ToDoTask : NSObject, NSCoding {
+ 
+    private static var idCount : Int32 = 0
     
+    public static func getNextId() -> Int32 {
+        let count = idCount
+        idCount += 1
+        return count
+    }
+    
+    var id : Int32
     var createdDate : Date = Date()
     var dueDate : Date
     var title : String
@@ -19,8 +28,11 @@ public class ToDoTask : NSObject, NSCoding {
     
     // our encoder
     public func encode(with aCoder: NSCoder) {
+        
+        print ("Calling Encode - todoId is: \(id)")
 
-        aCoder.encode(self.createdDate, forKey: "createdDate")
+        aCoder.encodeCInt(id, forKey: "id")
+        aCoder.encode(createdDate, forKey: "createdDate")
         aCoder.encode(dueDate, forKey: "dueDate")
         aCoder.encode(title, forKey: "title")
         aCoder.encode(desc, forKey: "desc")
@@ -29,9 +41,12 @@ public class ToDoTask : NSObject, NSCoding {
 
     }
 
-    // our decodeer
-    public required init?(coder aDecoder: NSCoder) {
+    // our decoder
+    required public init?(coder aDecoder: NSCoder) {
    
+        self.id = aDecoder.decodeCInt(forKey: "id")
+        print ("decoded id to: \(self.id)")
+        
         self.createdDate = (aDecoder.decodeObject(forKey: "createdDate") as? Date)!
         self.dueDate = (aDecoder.decodeObject(forKey: "dueDate") as? Date)!
          self.title = (aDecoder.decodeObject(forKey: "title") as? String)!
@@ -42,13 +57,18 @@ public class ToDoTask : NSObject, NSCoding {
     }
     
     // constructor
-    init(createdDate: Date, dueDate: Date, title: String, desc: String, completed: Bool, completedDate: Date?) {
+    public init(dueDate: Date, title: String, desc: String) {
         
-        self.createdDate = createdDate
+        print ("Id: \(ToDoTask.idCount)")
+        
+        self.id = ToDoTask.getNextId()
+        
+        self.createdDate = Date()
         self.dueDate = dueDate
         self.title = title
         self.desc = desc
-        self.completed = completed
-        self.completedDate = completedDate
+        self.completed = false
+        self.completedDate = nil
+        
     }
 }
