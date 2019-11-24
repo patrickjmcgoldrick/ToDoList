@@ -18,10 +18,14 @@ class AddTaskViewController: UIViewController {
     
     private var datePicker : UIDatePicker?
     
+    @IBOutlet weak var lblErrorMsg: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        lblErrorMsg.text = ""
+        
         setupDueDatePicker()
     
     }
@@ -62,6 +66,47 @@ class AddTaskViewController: UIViewController {
         tfDueDate.text = sender.date.formatDueDate()
         
         view.endEditing(true)
+    }
+    
+    // react to either button being clicked
+    @IBAction func btnActionDone(_ sender: Any) {
+        
+        if tfTitle.text == "" {
+            
+            setError(message: "Please enter a title.")
+            return
+        }
+        
+        if tfDescription.text == "" {
+            
+            setError(message: "Please enter a Description.")
+                return
+        }
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let dataController = appDelegate.dataController
+        
+        let task = ToDoTask(createdDate: Date(),
+                            dueDate: Date(),
+                            title: tfTitle.text!,
+                            desc: tfDescription.text,
+                            completed: false,
+                            completedDate: nil)
+        
+        print ("Saving Task.")
+        
+        if (dataController?.addTask(task: task) != nil) {
+            print ("Saved!")
+        } else {
+            print ("Error saving Task")
+        }
+        
+    }
+    
+    private func setError(message: String) {
+        
+        lblErrorMsg.text = message
+        
     }
     
 }

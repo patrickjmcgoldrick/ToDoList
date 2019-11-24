@@ -94,6 +94,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="ToDo List" id="26H-If-tgX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="tgQ-iS-G6E">
+                            <connections>
+                                <action selector="btnActionLIstData:" destination="BYZ-38-t0r" id="yJL-Ot-ZH2"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zVd-Dv-VSU">
                             <connections>
                                 <segue destination="WeZ-Vj-tYo" kind="show" id="7nx-Sr-ypW"/>
@@ -155,12 +160,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYY-kc-M8a">
-                                <rect key="frame" x="169" y="431" width="37" height="44"/>
+                                <rect key="frame" x="169" y="447" width="37" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="SeN-u6-BbS"/>
+                                    <constraint firstAttribute="height" constant="60" id="SeN-u6-BbS"/>
                                 </constraints>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="btnActionDone:" destination="WeZ-Vj-tYo" eventType="touchUpInside" id="aNW-YE-wRx"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Errors..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLc-Pw-RRx">
+                                <rect key="frame" x="16" y="423" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -177,20 +191,28 @@
                             <constraint firstItem="Rk1-oy-Ttl" firstAttribute="top" secondItem="cVp-uL-icj" secondAttribute="bottom" constant="16" id="dUr-1e-Pvd"/>
                             <constraint firstItem="1CY-w8-aHM" firstAttribute="leading" secondItem="DCS-hs-MpV" secondAttribute="leading" constant="20" id="eim-SV-ICu"/>
                             <constraint firstItem="DCS-hs-MpV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jdd-gK-UW1" secondAttribute="trailing" symbolic="YES" id="fX2-ny-Qcl"/>
+                            <constraint firstItem="DCS-hs-MpV" firstAttribute="trailing" secondItem="aLc-Pw-RRx" secondAttribute="trailing" constant="16" id="g2I-vx-r0y"/>
                             <constraint firstItem="DCS-hs-MpV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1CY-w8-aHM" secondAttribute="trailing" symbolic="YES" id="hOL-om-wbv"/>
                             <constraint firstItem="DCS-hs-MpV" firstAttribute="trailing" secondItem="Rk1-oy-Ttl" secondAttribute="trailing" constant="32" id="hkL-D7-FrP"/>
                             <constraint firstItem="DCS-hs-MpV" firstAttribute="trailing" secondItem="Ffp-zJ-hLz" secondAttribute="trailing" constant="32" id="k1r-jx-CmR"/>
                             <constraint firstItem="cVp-uL-icj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DCS-hs-MpV" secondAttribute="leading" id="oKI-40-bTc"/>
                             <constraint firstItem="Ffp-zJ-hLz" firstAttribute="top" secondItem="1CY-w8-aHM" secondAttribute="bottom" constant="16" id="pN3-Ha-AFY"/>
-                            <constraint firstItem="UYY-kc-M8a" firstAttribute="top" secondItem="Rk1-oy-Ttl" secondAttribute="bottom" constant="24" id="rWY-HW-8zS"/>
+                            <constraint firstItem="aLc-Pw-RRx" firstAttribute="top" secondItem="Rk1-oy-Ttl" secondAttribute="bottom" constant="16" id="qQ7-uK-o3a"/>
+                            <constraint firstItem="UYY-kc-M8a" firstAttribute="top" secondItem="Rk1-oy-Ttl" secondAttribute="bottom" constant="40" id="qW4-qc-7Io"/>
+                            <constraint firstItem="aLc-Pw-RRx" firstAttribute="leading" secondItem="DCS-hs-MpV" secondAttribute="leading" constant="16" id="r9l-ez-zKK"/>
                             <constraint firstItem="cVp-uL-icj" firstAttribute="top" secondItem="TSz-rH-eVm" secondAttribute="bottom" constant="24" id="vk8-as-JH5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DCS-hs-MpV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="62w-IE-v2q">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="gwf-aj-iQ9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="gwf-aj-iQ9">
+                            <connections>
+                                <action selector="btnActionDone:" destination="WeZ-Vj-tYo" id="ll9-4K-RV8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lblErrorMsg" destination="aLc-Pw-RRx" id="1RU-ue-rqO"/>
                         <outlet property="tfDescription" destination="TSz-rH-eVm" id="dZH-H3-A8O"/>
                         <outlet property="tfDueDate" destination="Rk1-oy-Ttl" id="gJm-A6-RVx"/>
                         <outlet property="tfTitle" destination="Ffp-zJ-hLz" id="NNh-tQ-3L0"/>
@@ -198,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ov7-jp-JnU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783" y="-14"/>
+            <point key="canvasLocation" x="2782" y="-31"/>
         </scene>
         <!--Completed-->
         <scene sceneID="idP-DS-4gp">

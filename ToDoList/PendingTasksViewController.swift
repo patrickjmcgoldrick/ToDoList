@@ -12,6 +12,20 @@ class PendingTasksViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    
+    @IBAction func btnActionLIstData(_ sender: Any) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let dataController = appDelegate.dataController
+        
+        let pendingTasks = dataController?.getPendingTasks()
+        
+        print ("Pending: \(pendingTasks)")
+
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -12,9 +12,12 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var dataController : DataControllerPC?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        dataController = ArchiverDataController()
+        
         // Override point for customization after application launch.
         return true
     }

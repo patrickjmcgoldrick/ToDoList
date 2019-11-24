@@ -10,9 +10,13 @@ import Foundation
 
 public protocol DataControllerPC {
     
+    // write task
     func addTask(task: ToDoTask)
     
+    // read pending tasks
+    func getPendingTasks() -> [ToDoTask]
+    
+    // read complted tasks
     func getCompletedTasks() -> [ToDoTask]
     
-    func getPendingTasks() -> [ToDoTask]
 }
