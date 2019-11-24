@@ -1,3 +1,6 @@
+# ToDo:
+* animated checkbox on PendingView
+
 # Weekend 1 Assignment
 ## Create a basic TODO app - 
 - the user will be able to create custom TODOs 

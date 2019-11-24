@@ -16,7 +16,18 @@ class PendingTaskCell: UITableViewCell {
     
     @IBOutlet weak var lblDesc: UILabel!
     
+    var indexPath : IndexPath?
+    weak var delegate : PendingCellDelegate?
+    
     @IBAction func btnActionComplete(_ sender: Any) {
+        if let indexPath = indexPath,
+            let delegate = delegate {
+            
+            delegate.taskCompleted(indexPath: indexPath)
+            
+        }
     }
     
 }
+
+

@@ -86,16 +86,15 @@ class AddTaskViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let dataController = appDelegate.dataController
         
-        let task = ToDoTask(dueDate: Date(),
+        let task = ToDoTask(dueDate: self.datePicker?.date ?? Date(),
                             title: tfTitle.text!,
                             desc: tfDescription.text)
         
-        print ("Saving Task.")
         
         if (dataController?.addTask(task: task) != nil) {
-            print ("Saved!")
+            print ("Saved New Task!")
         } else {
-            print ("Error saving Task")
+            print ("Error saving New Task")
         }
         
     }

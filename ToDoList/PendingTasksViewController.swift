@@ -57,6 +57,9 @@ extension PendingTasksViewController : UITableViewDataSource {
         cell.lblDesc.text = pendingTasks[indexPath.row].desc
         cell.lblDate.text = "Due: \(pendingTasks[indexPath.row].dueDate.formatDueDate())"
         
+        cell.indexPath = indexPath
+        cell.delegate = self
+        
         return cell
     }
     
@@ -73,7 +76,7 @@ extension PendingTasksViewController : UITableViewDelegate {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let dataController = appDelegate.dataController
             
-            // background the loading / parsing elements
+            // background the removing of row
             DispatchQueue.global(qos: .background).async {
 
                 if let tasks = dataController?.remove(index: indexPath.row, pending: self.pendingTasks) {
@@ -88,4 +91,30 @@ extension PendingTasksViewController : UITableViewDelegate {
             }
         }
     }
+}
+
+extension PendingTasksViewController : PendingCellDelegate {
+    
+    func taskCompleted(indexPath: IndexPath) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let dataController = appDelegate.dataController
+        
+        // background the removing of row
+        DispatchQueue.global(qos: .background).async {
+
+            if let tasks = dataController?.markCompleted(
+                        index: indexPath.row,
+                        pending: self.pendingTasks) {
+
+                self.pendingTasks = tasks
+                
+            }
+        
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+
 }
