@@ -26,7 +26,7 @@ class ArchiverDataController : DataControllerPC {
     }
     
     func remove(index: Int, pending: [ToDoTask]) -> [ToDoTask] {
-        print ("Calling Remove on: \(index)")
+
         var result = pending
         result.remove(at: index)
         
@@ -40,7 +40,6 @@ class ArchiverDataController : DataControllerPC {
     }
     
     func markCompleted(index: Int, pending: [ToDoTask]) -> [ToDoTask] {
-        print ("Calling Mark Completed on: \(index)")
         
         pending[index].completed = true
         pending[index].completedDate = Date()

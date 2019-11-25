@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BEMCheckBox
 
 class PendingTasksViewController: UIViewController {
 
@@ -57,9 +58,18 @@ extension PendingTasksViewController : UITableViewDataSource {
         cell.lblDesc.text = pendingTasks[indexPath.row].desc
         cell.lblDate.text = "Due: \(pendingTasks[indexPath.row].dueDate.formatDueDate())"
         
-        cell.indexPath = indexPath
-        cell.delegate = self
+        cell.ckbxCompleted.on = false
+        cell.ckbxCompleted.tag = indexPath.row
+        cell.ckbxCompleted.delegate = self
         
+        if pendingTasks[indexPath.row].dueDate.startOfDay() < Date().startOfDay() {
+            cell.lblDate.textColor = .red
+            cell.ckbxCompleted.tintColor = .red
+
+        } else {
+            cell.lblDate.textColor = .black
+            cell.ckbxCompleted.tintColor = .systemGreen
+        }
         return cell
     }
     
@@ -93,18 +103,20 @@ extension PendingTasksViewController : UITableViewDelegate {
     }
 }
 
-extension PendingTasksViewController : PendingCellDelegate {
+extension PendingTasksViewController : BEMCheckBoxDelegate {
     
-    func taskCompleted(indexPath: IndexPath) {
+    func animationDidStop(for bemCheckBox: BEMCheckBox) {
+        
+        let row = bemCheckBox.tag
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let dataController = appDelegate.dataController
-        
+                
         // background the removing of row
         DispatchQueue.global(qos: .background).async {
 
             if let tasks = dataController?.markCompleted(
-                        index: indexPath.row,
+                        index: row,
                         pending: self.pendingTasks) {
 
                 self.pendingTasks = tasks
@@ -115,6 +127,8 @@ extension PendingTasksViewController : PendingCellDelegate {
                 self.tableView.reloadData()
             }
         }
+ 
+ 
     }
 
 }
