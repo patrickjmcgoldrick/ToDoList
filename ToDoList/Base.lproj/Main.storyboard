@@ -186,6 +186,9 @@
                                 <rect key="frame" x="32" y="97" width="311" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tfActionEditing:" destination="WeZ-Vj-tYo" eventType="editingDidBegin" id="y2a-Jh-grg"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdd-gK-UW1">
                                 <rect key="frame" x="20" y="155" width="97.5" height="21"/>
@@ -231,7 +234,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TSz-rH-eVm" firstAttribute="leading" secondItem="DCS-hs-MpV" secondAttribute="leading" constant="32" id="4Lw-J5-DOk"/>
                             <constraint firstItem="Jdd-gK-UW1" firstAttribute="leading" secondItem="DCS-hs-MpV" secondAttribute="leading" constant="20" id="5M7-e7-EtD"/>

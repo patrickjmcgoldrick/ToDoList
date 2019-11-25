@@ -105,4 +105,11 @@ class AddTaskViewController: UIViewController {
         
     }
     
+    @IBAction func tfActionEditing(_ sender: Any) {
+        lblErrorMsg.text = ""
+    }
+    
+    
+    
 }
+
