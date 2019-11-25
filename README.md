@@ -19,7 +19,7 @@ Create a Tab Bar app with at least two tabs
 
 ## Second Screen: 
 * There must be a another screen that will allow the user to enter in a new TODO. 
-* The user must be able to enter in i
+* The user must be able to enter in: 
   * a title, 
   * a description, 
   * and a due date. 
@@ -29,7 +29,8 @@ Create a Tab Bar app with at least two tabs
 
 ## Second Tab
 There is only one screen required here, which will contain a list of all the user’s completed TODOs.
-*  The cells on this screen will show i
+* The cells on this screen will show: 
   * the title label 
   * and the completed date. 
+
 For this screen, you can simply check for the latest data whenever the user navigates to this screen (see: ViewController lifecycle functions).
