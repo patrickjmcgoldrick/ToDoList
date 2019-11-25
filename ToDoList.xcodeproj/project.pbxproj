@@ -11,6 +11,8 @@
 		5E007F832389C47600B0D5A1 /* ToDoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E007F822389C47600B0D5A1 /* ToDoTask.swift */; };
 		5E007F852389C53D00B0D5A1 /* ArchiverDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E007F842389C53D00B0D5A1 /* ArchiverDataController.swift */; };
 		5E86E017238B66BD0031DBF3 /* CoreDataDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86E016238B66BD0031DBF3 /* CoreDataDataController.swift */; };
+		5E86E019238BA8880031DBF3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86E018238BA8880031DBF3 /* SettingsViewController.swift */; };
+		5E86E01B238BAD3C0031DBF3 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86E01A238BAD3C0031DBF3 /* K.swift */; };
 		5EB6BDA62388B9F40088A54F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BDA52388B9F40088A54F /* AppDelegate.swift */; };
 		5EB6BDA82388B9F40088A54F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BDA72388B9F40088A54F /* SceneDelegate.swift */; };
 		5EB6BDAA2388B9F40088A54F /* PendingTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BDA92388B9F40088A54F /* PendingTasksViewController.swift */; };
@@ -57,6 +59,8 @@
 		5E007F822389C47600B0D5A1 /* ToDoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTask.swift; sourceTree = "<group>"; };
 		5E007F842389C53D00B0D5A1 /* ArchiverDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiverDataController.swift; sourceTree = "<group>"; };
 		5E86E016238B66BD0031DBF3 /* CoreDataDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDataController.swift; sourceTree = "<group>"; };
+		5E86E018238BA8880031DBF3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5E86E01A238BAD3C0031DBF3 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		5EB6BDA22388B9F40088A54F /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB6BDA52388B9F40088A54F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB6BDA72388B9F40088A54F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,10 +157,12 @@
 				5EB6BDD8238903A70088A54F /* CompletedTasksViewController.swift */,
 				5EFB71E923890D93000A9598 /* CompletedTaskCell.swift */,
 				5EB6BDDA238903BB0088A54F /* AddTaskViewController.swift */,
+				5E86E018238BA8880031DBF3 /* SettingsViewController.swift */,
 				5EB6BDB12388B9F50088A54F /* Assets.xcassets */,
 				5EFB71EB2389A3A4000A9598 /* Date_Extension.swift */,
 				5EB6BDB32388B9F50088A54F /* LaunchScreen.storyboard */,
 				5EB6BDAB2388B9F40088A54F /* Main.storyboard */,
+				5E86E01A238BAD3C0031DBF3 /* K.swift */,
 				5EB6BDB62388B9F50088A54F /* Info.plist */,
 				5EB6BDAE2388B9F40088A54F /* ToDoList.xcdatamodeld */,
 				5E007F7E2389C13300B0D5A1 /* DataControllerDelegate.swift */,
@@ -443,9 +449,11 @@
 				5EB6BDDB238903BB0088A54F /* AddTaskViewController.swift in Sources */,
 				5EFB71EA23890D93000A9598 /* CompletedTaskCell.swift in Sources */,
 				5EB6BDAA2388B9F40088A54F /* PendingTasksViewController.swift in Sources */,
+				5E86E01B238BAD3C0031DBF3 /* K.swift in Sources */,
 				5E007F7F2389C13300B0D5A1 /* DataControllerDelegate.swift in Sources */,
 				5EFB71E823890662000A9598 /* PendingTaskCell.swift in Sources */,
 				5E86E017238B66BD0031DBF3 /* CoreDataDataController.swift in Sources */,
+				5E86E019238BA8880031DBF3 /* SettingsViewController.swift in Sources */,
 				5EB6BDA62388B9F40088A54F /* AppDelegate.swift in Sources */,
 				5E007F852389C53D00B0D5A1 /* ArchiverDataController.swift in Sources */,
 				5EB6BDA82388B9F40088A54F /* SceneDelegate.swift in Sources */,

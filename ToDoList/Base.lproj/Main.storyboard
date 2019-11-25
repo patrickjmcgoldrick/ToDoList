@@ -7,6 +7,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Settings-->
+        <scene sceneID="rCg-Y5-3n9">
+            <objects>
+                <viewController id="bgB-BZ-g1n" customClass="SettingsViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ItH-Xk-gK1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Source:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSg-oE-k3M">
+                                <rect key="frame" x="20" y="76" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sgd-Eo-xLV">
+                                <rect key="frame" x="99" y="121" width="177" height="32"/>
+                                <segments>
+                                    <segment title="NSArchiver"/>
+                                    <segment title="Core Data"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segChangeDataSource:" destination="bgB-BZ-g1n" eventType="valueChanged" id="l3K-xB-fMM"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zSg-oE-k3M" firstAttribute="top" secondItem="rjB-La-25J" secondAttribute="top" constant="32" id="RVQ-8M-PBx"/>
+                            <constraint firstItem="zSg-oE-k3M" firstAttribute="leading" secondItem="rjB-La-25J" secondAttribute="leading" constant="20" id="dfZ-9w-Cuh"/>
+                            <constraint firstItem="Sgd-Eo-xLV" firstAttribute="top" secondItem="zSg-oE-k3M" secondAttribute="bottom" constant="24" id="mnF-wE-4Ad"/>
+                            <constraint firstItem="Sgd-Eo-xLV" firstAttribute="centerX" secondItem="ItH-Xk-gK1" secondAttribute="centerX" id="o92-MJ-chF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rjB-La-25J"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="YB7-a4-SJU"/>
+                    <connections>
+                        <outlet property="segDataSource" destination="Sgd-Eo-xLV" id="M23-cF-UVJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5nr-bT-SrH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="-770"/>
+        </scene>
         <!--ToDo List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -106,6 +149,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="ToDo List" id="26H-If-tgX">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="YBS-or-acA">
+                            <connections>
+                                <segue destination="bgB-BZ-g1n" kind="show" id="JcU-wO-CPw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zVd-Dv-VSU">
                             <connections>
                                 <segue destination="WeZ-Vj-tYo" kind="show" id="7nx-Sr-ypW"/>
@@ -332,7 +380,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUs-xs-7th" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="304.01785714285711"/>
+            <point key="canvasLocation" x="-62" y="183"/>
         </scene>
         <!--Item-->
         <scene sceneID="ekh-dY-dXj">

@@ -16,9 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        dataController = CoreDataController.sharedManager
-        //ArchiverDataController()
+        // set default settings
+        UserDefaults.standard.register(defaults: [
+            K.Key.DATA_SOURCE_INDEX_KEY: K.Settings.DEFAULT_DATA_SOURCE_INDEX,
+            ])
         
+        let dataStoreIndex = UserDefaults.standard.integer(forKey: K.Key.DATA_SOURCE_INDEX_KEY)
+        
+        switch dataStoreIndex {
+        
+        case 0:
+            dataController = ArchiverDataController()
+            break
+            
+        case 1:
+            dataController = CoreDataController.sharedManager
+            break
+            
+            default: break
+        }
+                
         // Override point for customization after application launch.
         return true
     }
