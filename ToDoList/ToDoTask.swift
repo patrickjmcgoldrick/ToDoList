@@ -71,4 +71,18 @@ public class ToDoTask : NSObject, NSCoding {
         self.completedDate = nil
         
     }
+    
+    // full constructor
+    public init(createdDate: Date, dueDate: Date, title: String, desc: String, completed: Bool, completedDate: Date?) {
+                
+        self.id = 0
+        
+        self.createdDate = createdDate
+        self.dueDate = dueDate
+        self.title = title
+        self.desc = desc
+        self.completed = completed
+        self.completedDate = completedDate
+        
+    }
 }
