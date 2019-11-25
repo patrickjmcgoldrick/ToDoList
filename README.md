@@ -1,6 +1,3 @@
-# ToDo:
-* Core Data implementation
-
 # Weekend 1 Assignment
 ## Create a basic TODO app - 
 - the user will be able to create custom TODOs 
