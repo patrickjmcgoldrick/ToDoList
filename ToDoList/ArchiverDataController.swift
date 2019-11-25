@@ -26,18 +26,21 @@ class ArchiverDataController : DataControllerPC {
     }
     
     func remove(index: Int, pending: [ToDoTask]) -> [ToDoTask] {
-        
+        print ("Calling Remove on: \(index)")
         var result = pending
         result.remove(at: index)
+        
+        // add completed and pending tasks and save to disk
         let completedTasks = getCompletedTasks()
         result += completedTasks
 
-        saveObject(fileName: ArchiverDataController.ARCHIVE_FILENAME, object: result)
+        let _ = saveObject(fileName: ArchiverDataController.ARCHIVE_FILENAME, object: result)
         
         return getPendingTasks()
     }
     
     func markCompleted(index: Int, pending: [ToDoTask]) -> [ToDoTask] {
+        print ("Calling Mark Completed on: \(index)")
         
         pending[index].completed = true
         pending[index].completedDate = Date()
@@ -45,7 +48,7 @@ class ArchiverDataController : DataControllerPC {
         let completedTasks = getCompletedTasks()
         let result = pending + completedTasks
         
-        saveObject(fileName: ArchiverDataController.ARCHIVE_FILENAME, object: result)
+        let _ = saveObject(fileName: ArchiverDataController.ARCHIVE_FILENAME, object: result)
 
         return getPendingTasks()
     }
