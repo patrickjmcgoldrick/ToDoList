@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol DataControllerPC {
+public protocol DataControllerDelegate {
     
     // write task
     func addTask(task: ToDoTask)

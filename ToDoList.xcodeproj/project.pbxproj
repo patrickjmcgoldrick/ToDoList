@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E007F7F2389C13300B0D5A1 /* DataControllerPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E007F7E2389C13300B0D5A1 /* DataControllerPC.swift */; };
+		5E007F7F2389C13300B0D5A1 /* DataControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E007F7E2389C13300B0D5A1 /* DataControllerDelegate.swift */; };
 		5E007F832389C47600B0D5A1 /* ToDoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E007F822389C47600B0D5A1 /* ToDoTask.swift */; };
 		5E007F852389C53D00B0D5A1 /* ArchiverDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E007F842389C53D00B0D5A1 /* ArchiverDataController.swift */; };
 		5EB6BDA62388B9F40088A54F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BDA52388B9F40088A54F /* AppDelegate.swift */; };
@@ -52,7 +52,7 @@
 		23DFA13303BDACB4F633B58D /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 		27C9B0E2ACCAB9A9D3385385 /* Pods-ToDoListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListTests.release.xcconfig"; path = "Target Support Files/Pods-ToDoListTests/Pods-ToDoListTests.release.xcconfig"; sourceTree = "<group>"; };
 		2E486E4816C72078A34A76B1 /* Pods-ToDoList-ToDoListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList-ToDoListUITests.release.xcconfig"; path = "Target Support Files/Pods-ToDoList-ToDoListUITests/Pods-ToDoList-ToDoListUITests.release.xcconfig"; sourceTree = "<group>"; };
-		5E007F7E2389C13300B0D5A1 /* DataControllerPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerPC.swift; sourceTree = "<group>"; };
+		5E007F7E2389C13300B0D5A1 /* DataControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerDelegate.swift; sourceTree = "<group>"; };
 		5E007F822389C47600B0D5A1 /* ToDoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTask.swift; sourceTree = "<group>"; };
 		5E007F842389C53D00B0D5A1 /* ArchiverDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiverDataController.swift; sourceTree = "<group>"; };
 		5EB6BDA22388B9F40088A54F /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,7 +157,7 @@
 				5EB6BDAB2388B9F40088A54F /* Main.storyboard */,
 				5EB6BDB62388B9F50088A54F /* Info.plist */,
 				5EB6BDAE2388B9F40088A54F /* ToDoList.xcdatamodeld */,
-				5E007F7E2389C13300B0D5A1 /* DataControllerPC.swift */,
+				5E007F7E2389C13300B0D5A1 /* DataControllerDelegate.swift */,
 				5E007F842389C53D00B0D5A1 /* ArchiverDataController.swift */,
 				5E007F822389C47600B0D5A1 /* ToDoTask.swift */,
 			);
@@ -440,7 +440,7 @@
 				5EB6BDDB238903BB0088A54F /* AddTaskViewController.swift in Sources */,
 				5EFB71EA23890D93000A9598 /* CompletedTaskCell.swift in Sources */,
 				5EB6BDAA2388B9F40088A54F /* PendingTasksViewController.swift in Sources */,
-				5E007F7F2389C13300B0D5A1 /* DataControllerPC.swift in Sources */,
+				5E007F7F2389C13300B0D5A1 /* DataControllerDelegate.swift in Sources */,
 				5EFB71E823890662000A9598 /* PendingTaskCell.swift in Sources */,
 				5EB6BDA62388B9F40088A54F /* AppDelegate.swift in Sources */,
 				5E007F852389C53D00B0D5A1 /* ArchiverDataController.swift in Sources */,

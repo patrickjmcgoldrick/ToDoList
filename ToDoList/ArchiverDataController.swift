@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ArchiverDataController : DataControllerPC {
+class ArchiverDataController : DataControllerDelegate {
 
     private static let ARCHIVE_FILENAME : String = "tasks_archive"
     
