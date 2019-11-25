@@ -168,7 +168,7 @@
             </objects>
             <point key="canvasLocation" x="1976.8" y="-31.03448275862069"/>
         </scene>
-        <!--Add-->
+        <!--Add Task-->
         <scene sceneID="E6z-EH-xfr">
             <objects>
                 <viewController id="WeZ-Vj-tYo" customClass="AddTaskViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -231,7 +231,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TSz-rH-eVm" firstAttribute="leading" secondItem="DCS-hs-MpV" secondAttribute="leading" constant="32" id="4Lw-J5-DOk"/>
                             <constraint firstItem="Jdd-gK-UW1" firstAttribute="leading" secondItem="DCS-hs-MpV" secondAttribute="leading" constant="20" id="5M7-e7-EtD"/>
@@ -259,7 +259,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DCS-hs-MpV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add" id="62w-IE-v2q">
+                    <navigationItem key="navigationItem" title="Add Task" id="62w-IE-v2q">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="gwf-aj-iQ9">
                             <connections>
                                 <action selector="btnActionDone:" destination="WeZ-Vj-tYo" id="ll9-4K-RV8"/>
@@ -382,11 +382,11 @@
             </objects>
             <point key="canvasLocation" x="-62" y="183"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="ekh-dY-dXj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VOj-gO-z2g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pSe-7n-DcG"/>
+                    <tabBarItem key="tabBarItem" title="" image="doc" catalog="system" id="pSe-7n-DcG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yeg-rv-a79">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -401,11 +401,11 @@
             </objects>
             <point key="canvasLocation" x="1069.5652173913045" y="-13.392857142857142"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="wXf-uD-8yw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eRA-B4-RhM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="BhS-Tm-UU4"/>
+                    <tabBarItem key="tabBarItem" title="" image="doc.fill" catalog="system" selectedImage="doc.fill" id="BhS-Tm-UU4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qpz-8l-Is9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -421,4 +421,8 @@
             <point key="canvasLocation" x="1069.5652173913045" y="661.60714285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="doc" catalog="system" width="56" height="64"/>
+        <image name="doc.fill" catalog="system" width="56" height="64"/>
+    </resources>
 </document>
