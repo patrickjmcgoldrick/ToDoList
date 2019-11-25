@@ -249,7 +249,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made Best Stuff Ever" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBi-bM-9Ib">
-                                                    <rect key="frame" x="15" y="11" width="168.5" height="20"/>
+                                                    <rect key="frame" x="76" y="11" width="284" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -260,13 +260,30 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ua-gX-N8E" customClass="BEMCheckBox">
+                                                    <rect key="frame" x="16" y="12" width="44" height="44"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="NNv-fW-NZn"/>
+                                                        <constraint firstAttribute="width" secondItem="5Ua-gX-N8E" secondAttribute="height" multiplier="1:1" id="RUB-Ab-STO"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                            <real key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="JXL-gu-RT9" firstAttribute="bottom" secondItem="x7O-OX-iak" secondAttribute="bottomMargin" id="ArC-23-DBl"/>
-                                                <constraint firstItem="xBi-bM-9Ib" firstAttribute="leading" secondItem="x7O-OX-iak" secondAttribute="leadingMargin" id="ArS-RF-Q7v"/>
                                                 <constraint firstItem="xBi-bM-9Ib" firstAttribute="top" secondItem="x7O-OX-iak" secondAttribute="topMargin" id="DVh-Vl-dWD"/>
+                                                <constraint firstItem="5Ua-gX-N8E" firstAttribute="centerY" secondItem="x7O-OX-iak" secondAttribute="centerY" id="Jf3-WQ-u8A"/>
+                                                <constraint firstItem="xBi-bM-9Ib" firstAttribute="leading" secondItem="5Ua-gX-N8E" secondAttribute="trailing" constant="16" id="KYx-rq-DYi"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="JXL-gu-RT9" secondAttribute="trailing" id="OT3-8q-kc1"/>
                                                 <constraint firstItem="JXL-gu-RT9" firstAttribute="top" secondItem="xBi-bM-9Ib" secondAttribute="bottom" constant="8" id="XQo-1b-SjW"/>
+                                                <constraint firstItem="5Ua-gX-N8E" firstAttribute="leading" secondItem="x7O-OX-iak" secondAttribute="leading" constant="16" id="Z5e-BK-hq5"/>
+                                                <constraint firstItem="xBi-bM-9Ib" firstAttribute="trailing" secondItem="x7O-OX-iak" secondAttribute="trailingMargin" id="mbR-bU-Spj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
