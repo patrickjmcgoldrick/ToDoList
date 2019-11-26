@@ -68,7 +68,7 @@ extension PendingTasksViewController : UITableViewDataSource {
 
         } else {
             cell.lblDate.textColor = .black
-            cell.ckbxCompleted.tintColor = .systemGreen
+            cell.ckbxCompleted.tintColor = .green//.systemGreen
         }
         return cell
     }

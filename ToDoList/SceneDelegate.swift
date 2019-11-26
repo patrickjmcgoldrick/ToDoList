@@ -5,7 +5,7 @@
 //  Created by dirtbag on 11/22/19.
 //  Copyright © 2019 dirtbag. All rights reserved.
 //
-
+/*
 import UIKit
 
 @available(iOS 13.0, *)
@@ -55,3 +55,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+*/

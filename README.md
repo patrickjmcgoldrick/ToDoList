@@ -33,4 +33,10 @@ There is only one screen required here, which will contain a list of all the use
   * the title label 
   * and the completed date. 
 
+
 For this screen, you can simply check for the latest data whenever the user navigates to this screen (see: ViewController lifecycle functions).
+
+# Author Credits
+<div>Icons made by <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

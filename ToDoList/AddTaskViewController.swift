@@ -90,12 +90,16 @@ class AddTaskViewController: UIViewController {
                             title: tfTitle.text!,
                             desc: tfDescription.text)
         
-        
+        tfTitle.text = ""
+        tfDescription.text = ""
+
         if (dataController?.addTask(task: task) != nil) {
             print ("Saved New Task!")
         } else {
             print ("Error saving New Task")
         }
+        
+        navigationController?.popViewController(animated: true)
         
     }
     
