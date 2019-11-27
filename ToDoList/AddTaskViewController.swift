@@ -83,8 +83,8 @@ class AddTaskViewController: UIViewController {
                 return
         }
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let dataController = appDelegate.dataController
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let dataController = appDelegate?.dataController
         
         let task = ToDoTask(dueDate: self.datePicker?.date ?? Date(),
                             title: tfTitle.text!,

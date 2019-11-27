@@ -28,16 +28,16 @@ class SettingsViewController: UIViewController {
 
     @IBAction func segChangeDataSource(_ sender: Any) {
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
         
         switch (segDataSource.selectedSegmentIndex) {
             
             case 0:
-                appDelegate.dataController = ArchiverDataController()
+                appDelegate?.dataController = ArchiverDataController()
                 break
                 
             case 1:
-                appDelegate.dataController = CoreDataController.sharedManager
+                appDelegate?.dataController = CoreDataController.sharedManager
                 break
                 
             default: break

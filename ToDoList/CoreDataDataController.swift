@@ -94,8 +94,9 @@ class CoreDataController : DataControllerDelegate {
     private func createToDoRecord(title: String, description: String, dueDate: Date) {
         
         // create new record
-        let record = NSEntityDescription.insertNewObject(forEntityName: "Task", into: self.managedObjectContext) as! Task
-        
+        guard let record = NSEntityDescription
+            .insertNewObject(forEntityName: "Task", into: self.managedObjectContext) as? Task else { return }
+                
         record.createdDate = Date()
         record.dueDate = dueDate
         record.title = title
@@ -157,7 +158,7 @@ class CoreDataController : DataControllerDelegate {
     
     /// remove a record based on Created Date matching this object
     private func removeRecord(task: ToDoTask) {
-        
+
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
            
         request.predicate = NSPredicate(format: "(createdDate == %@)", task.createdDate as NSDate)
@@ -171,12 +172,11 @@ class CoreDataController : DataControllerDelegate {
             if records.count > 0 {
               
                 for record: Any in records{
-                    self.managedObjectContext.delete(record as! NSManagedObject)
+                    guard let record = record as? NSManagedObject  else { continue }
+                    self.managedObjectContext.delete(record as NSManagedObject)
                 }
                 try self.managedObjectContext.save()
-              
             }
-                  
         } catch {}
     }
     

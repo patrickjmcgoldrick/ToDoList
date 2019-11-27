@@ -23,8 +23,8 @@ class CompletedTasksViewController: UIViewController {
     
     func loadCompletedTasks() {
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let dataController = appDelegate.dataController
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let dataController = appDelegate?.dataController
         
         // background the loading / parsing elements
         DispatchQueue.global(qos: .background).async {
@@ -53,7 +53,7 @@ extension CompletedTasksViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CompletedCell", for: indexPath) as! CompletedTaskCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CompletedCell", for: indexPath) as? CompletedTaskCell else { return UITableViewCell() }
         
         cell.lblTitle.text = completedTasks[indexPath.row].title
         if let completedDate = completedTasks[indexPath.row].completedDate {

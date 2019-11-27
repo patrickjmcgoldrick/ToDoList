@@ -23,8 +23,8 @@ class PendingTasksViewController: UIViewController {
     
     func loadPendingTasks() {
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let dataController = appDelegate.dataController
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let dataController = appDelegate?.dataController
         
         // background the loading / parsing elements
         DispatchQueue.global(qos: .background).async {
@@ -52,7 +52,7 @@ extension PendingTasksViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PendingCell", for: indexPath) as! PendingTaskCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PendingCell", for: indexPath) as? PendingTaskCell else { return UITableViewCell() }
         
         cell.lblTitle.text = pendingTasks[indexPath.row].title
         cell.lblDesc.text = pendingTasks[indexPath.row].desc
@@ -83,8 +83,8 @@ extension PendingTasksViewController : UITableViewDelegate {
 
         if editingStyle == .delete {
             
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let dataController = appDelegate.dataController
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            let dataController = appDelegate?.dataController
             
             // background the removing of row
             DispatchQueue.global(qos: .background).async {
@@ -109,8 +109,8 @@ extension PendingTasksViewController : BEMCheckBoxDelegate {
         
         let row = bemCheckBox.tag
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let dataController = appDelegate.dataController
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let dataController = appDelegate?.dataController
                 
         // background the removing of row
         DispatchQueue.global(qos: .background).async {
