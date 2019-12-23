@@ -9,9 +9,7 @@
 import UIKit
 
 class CompletedTaskCell: UITableViewCell {
+    @IBOutlet var lblCompletedDate: UILabel!
 
-    @IBOutlet weak var lblCompletedDate: UILabel!
-    
-    @IBOutlet weak var lblTitle: UILabel!
-    
+    @IBOutlet var lblTitle: UILabel!
 }

@@ -8,21 +8,19 @@
 
 import Foundation
 
-public protocol DataControllerDelegate {
-    
+protocol DataControllerDelegate {
     // write task
     func addTask(task: ToDoTask)
-    
+
     // remove a record based on index
     func remove(index: Int, pending: [ToDoTask]) -> [ToDoTask]
-    
+
     // mark a row completed
     func markCompleted(index: Int, pending: [ToDoTask]) -> [ToDoTask]
-    
+
     // read pending tasks
     func getPendingTasks() -> [ToDoTask]
-    
+
     // read complted tasks
     func getCompletedTasks() -> [ToDoTask]
-    
 }

@@ -9,46 +9,37 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    
+    @IBOutlet private var segDataSource: UISegmentedControl!
 
-    
-    @IBOutlet weak var segDataSource: UISegmentedControl!
-    
     var dataStoreIndex = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Load stored values
-        dataStoreIndex = UserDefaults.standard.integer(forKey: K.Key.DATA_SOURCE_INDEX_KEY)
-        
+        dataStoreIndex = UserDefaults.standard.integer(forKey: K.Key.dataSourceIndexKey)
+
         segDataSource.selectedSegmentIndex = dataStoreIndex
-
     }
-    
 
-    @IBAction func segChangeDataSource(_ sender: Any) {
-        
+    @IBAction private func segChangeDataSource(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        
-        switch (segDataSource.selectedSegmentIndex) {
-            
-            case 0:
-                appDelegate?.dataController = ArchiverDataController()
-                break
-                
-            case 1:
-                appDelegate?.dataController = CoreDataController.sharedManager
-                break
-                
-            default: break
-            // nothing here
+
+        switch segDataSource.selectedSegmentIndex {
+        case 0:
+            appDelegate?.dataController = ArchiverDataController()
+
+        case 1:
+            appDelegate?.dataController = CoreDataController.sharedManager
+
+        default: break
+        // nothing here
         }
-        
-        UserDefaults.standard.set(segDataSource.selectedSegmentIndex, forKey: K.Key.DATA_SOURCE_INDEX_KEY)
+
+        UserDefaults.standard.set(segDataSource.selectedSegmentIndex, forKey: K.Key.dataSourceIndexKey)
     }
-    
-    
-    
+
     /*
     // MARK: - Navigation
 
@@ -58,5 +49,4 @@ class SettingsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

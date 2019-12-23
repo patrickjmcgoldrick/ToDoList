@@ -14,30 +14,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var dataController : DataControllerDelegate?
+    var dataController: DataControllerDelegate?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         // set default settings
         UserDefaults.standard.register(defaults: [
-            K.Key.DATA_SOURCE_INDEX_KEY: K.Settings.DEFAULT_DATA_SOURCE_INDEX,
+            K.Key.dataSourceIndexKey: K.Settings.defaultDataSourceIndex
             ])
-        
-        let dataStoreIndex = UserDefaults.standard.integer(forKey: K.Key.DATA_SOURCE_INDEX_KEY)
-        
+
+        let dataStoreIndex = UserDefaults.standard.integer(forKey: K.Key.dataSourceIndexKey)
+
         switch dataStoreIndex {
-        
+
         case 0:
             dataController = ArchiverDataController()
-            break
-            
+
         case 1:
             dataController = CoreDataController.sharedManager
-            break
-            
-            default: break
+
+        default: break
         }
-                
+
         // Override point for customization after application launch.
         return true
     }
@@ -68,11 +66,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          error conditions that could cause the creation of the store to fail.
         */
         let container = NSPersistentContainer(name: "ToDoList")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
+
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -104,4 +102,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

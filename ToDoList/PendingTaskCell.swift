@@ -6,19 +6,15 @@
 //  Copyright © 2019 dirtbag. All rights reserved.
 //
 
-import UIKit
 import BEMCheckBox
+import UIKit
 
 class PendingTaskCell: UITableViewCell {
+    @IBOutlet var ckbxCompleted: BEMCheckBox!
 
-    @IBOutlet weak var ckbxCompleted: BEMCheckBox!
-    
-    @IBOutlet weak var lblTitle: UILabel!
-    
-    @IBOutlet weak var lblDate: UILabel!
-    
-    @IBOutlet weak var lblDesc: UILabel!
-            
+    @IBOutlet var lblTitle: UILabel!
+
+    @IBOutlet var lblDate: UILabel!
+
+    @IBOutlet var lblDesc: UILabel!
 }
-
-
